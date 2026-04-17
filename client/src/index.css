@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --font-poppins: "Poppins", sans-serif;
+  --color-primary: #1d4ed8;
+  --color-primary-dark: #1e3a8a;
+  --color-primary-light: #60a5fa;
+  --color-secondary: #ffffff;
+  --color-accent: #0f172a;
+  --color-orange: #f97316;
+  --color-orange-dark: #ea580c;
+  --color-gray-light: #f1f5f9;
+  --color-gray-medium: #64748b;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+  /* `clip` cuts off horizontal overflow but — unlike `hidden` —
+     does NOT force overflow-y to auto and does NOT create a scroll container */
+  overflow-x: clip;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #1a1a2e;
+  background-color: #ffffff;
+  min-width: 320px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-y: none;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+::selection {
+  background-color: #1d4ed8;
+  color: #ffffff;
+}
+
+/* Global keyboard focus ring — base layer so Tailwind utilities can still override */
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #1d4ed8;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1e3a8a;
+}
